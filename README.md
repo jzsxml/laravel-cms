@@ -349,7 +349,7 @@ php artisan crud -t test -d 1
 | 包 | 用途 |
 |----|------|
 | `overtrue/pinyin` | 文章/单页 slug |
-| `openspout/openspout` | 后台 Excel 导出 |
+| `openspout/openspout` ^4.x | 后台 Excel 导出（与 PHP 8.3 兼容；5.x 需 PHP 8.4+） |
 | `league/flysystem-aws-s3-v3` | OSS / S3 上传 |
 | `ezyang/htmlpurifier` | 富文本净化 |
 
@@ -403,7 +403,7 @@ composer test
 
 ## 发布到 GitHub
 
-仓库已配置 `.gitignore`（排除 `.env`、`vendor/`、本地 SQLite、编译视图缓存等）与 GitHub Actions [`.github/workflows/tests.yml`](.github/workflows/tests.yml)（PHP 8.3 / 8.4 跑 `composer test`）。
+仓库已配置 `.gitignore`（排除 `.env`、`vendor/`、本地 SQLite、编译视图缓存等）与 GitHub Actions [`.github/workflows/tests.yml`](.github/workflows/tests.yml)（PHP 8.3 / 8.4 跑 `composer test`）。`composer.lock` 在 PHP 8.3 平台下解析（`composer.json` → `config.platform.php`），避免在 8.4+ 本机 `composer update` 后锁文件无法在 8.3 CI 安装。
 
 ```bash
 cd laravel-cms
