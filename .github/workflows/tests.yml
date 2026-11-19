@@ -36,7 +36,11 @@ jobs:
             ${{ runner.os }}-composer-
 
       - name: Install dependencies
-        run: composer install --prefer-dist --no-interaction --no-progress
+        env:
+          COMPOSER_MIRROR_PATH_REPOS: 0
+        run: |
+          composer config --global repos.packagist composer https://repo.packagist.org
+          composer install --prefer-dist --no-interaction --no-progress
 
       - name: Run tests
         run: composer test

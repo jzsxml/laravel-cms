@@ -417,6 +417,13 @@ git remote add origin https://github.com/<你的用户名>/laravel-cms.git
 git push -u origin main
 ```
 
+**Composer 源**：仓库内 `composer.lock` 的 dist 地址使用 **Packagist / GitHub**（勿在提交前用国内镜像 `composer update`，否则 CI 可能 404）。本地仍可用镜像加速，但更新依赖前请执行：
+
+```bash
+composer config repos.packagist composer https://repo.packagist.org
+composer update
+```
+
 克隆后的初始化：
 
 ```bash
