@@ -1,0 +1,43 @@
+:root {
+    --portal-primary: #1e3a5f;
+    --portal-accent: #2563eb;
+    --portal-muted: #64748b;
+}
+
+body.cms-portal-site {
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    color: #1e293b;
+    background: #f8fafc;
+}
+
+.portal-nav {
+    background: var(--portal-primary);
+}
+
+.portal-hero {
+    background: linear-gradient(135deg, var(--portal-primary) 0%, #334155 100%);
+    color: #fff;
+    border-radius: 0.75rem;
+    min-height: 220px;
+}
+
+.portal-card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(15, 23, 42, 0.08);
+    transition: box-shadow 0.15s ease;
+}
+
+.portal-card:hover {
+    box-shadow: 0 4px 16px rgba(15, 23, 42, 0.1);
+}
+
+.portal-footer {
+    background: #0f172a;
+    color: #94a3b8;
+}
+
+.portal-article-content img {
+    max-width: 100%;
+    height: auto;
+}

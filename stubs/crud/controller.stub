@@ -1,0 +1,23 @@
+<?php
+
+namespace {{ namespace }};
+
+use {{ model_import }};
+use App\Http\Controllers\Admin\CrudController;
+
+class {{ class }} extends CrudController
+{
+    protected string $modelClass = {{ model_class }}::class;
+
+    protected string $title = '{{ title }}';
+
+    protected array $listFields = {{ list_fields }};
+
+    protected array $searchFields = {{ search_fields }};
+
+    protected array $formFields = {{ form_fields }};
+
+    protected bool $softDelete = {{ soft_delete }};
+
+    protected string $softDeleteColumn = '{{ soft_delete_column }}';
+}

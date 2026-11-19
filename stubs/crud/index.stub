@@ -1,0 +1,99 @@
+@extends('admin.layouts.app')
+
+@section('title', $title)
+
+@section('content')
+<div class="d-flex justify-content-between align-items-center mb-3">
+    <div class="d-flex gap-2">
+        <input type="search" class="form-control form-control-sm" id="search" placeholder="搜索" style="max-width:220px">
+        <button class="btn btn-sm btn-secondary" id="btn-search">搜索</button>
+    </div>
+    <div class="d-flex gap-2">
+        <a href="{{ url(config('cms.admin_path').'/'.$urlPrefix.'/add') }}" class="btn btn-sm btn-success">添加</a>
+        @if(View::exists('admin.crud.'.$urlPrefix.'.recyclebin'))
+            <a href="{{ url(config('cms.admin_path').'/'.$urlPrefix.'/recyclebin') }}" class="btn btn-sm btn-outline-secondary">回收站</a>
+        @endif
+    </div>
+</div>
+<div class="card border-0 shadow-sm">
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered table-striped mb-0">
+                <thead><tr>{{ list_headers }}</tr></thead>
+                <tbody id="tbody"></tbody>
+            </table>
+        </div>
+        <ul class="pagination pagination-sm mt-3" id="pager"></ul>
+    </div>
+</div>
+@endsection
+
+@push('scripts')
+<script>
+(() => {
+    const base = @json(url(config('cms.admin_path').'/'.$urlPrefix));
+    const tbody = document.getElementById('tbody');
+    const pager = document.getElementById('pager');
+    let page = 1;
+    const limit = 10;
+    let search = '';
+
+    function rowHtml(row) {
+        return `<tr>
+            {{ list_row_cells }}
+        </tr>`;
+    }
+
+    function bindActions() {
+        tbody.querySelectorAll('[data-del]').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                if (!confirm('确认删除？')) return;
+                const body = new URLSearchParams({
+                    ids: btn.getAttribute('data-del'),
+                    _token: document.querySelector('meta[name=csrf-token]').content,
+                });
+                const res = await fetch(`${base}/del`, {
+                    method: 'POST',
+                    headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' },
+                    body,
+                });
+                const data = await res.json();
+                alert(data.msg || '完成');
+                if (data.code === 1) load();
+            });
+        });
+    }
+
+    function renderPager(total) {
+        const pages = Math.max(1, Math.ceil(total / limit));
+        pager.innerHTML = '';
+        for (let p = 1; p <= pages; p++) {
+            const li = document.createElement('li');
+            li.className = 'page-item' + (p === page ? ' active' : '');
+            li.innerHTML = `<a class="page-link" href="#">${p}</a>`;
+            li.addEventListener('click', (e) => { e.preventDefault(); page = p; load(); });
+            pager.appendChild(li);
+        }
+    }
+
+    async function load() {
+        const qs = new URLSearchParams({ limit, page, search });
+        const res = await fetch(`${base}?${qs}`, {
+            headers: { 'X-Requested-With': 'XMLHttpRequest', 'Accept': 'application/json' }
+        });
+        const data = await res.json();
+        tbody.innerHTML = (data.rows || []).map(rowHtml).join('');
+        bindActions();
+        renderPager(data.total || 0);
+    }
+
+    document.getElementById('btn-search').addEventListener('click', () => {
+        search = document.getElementById('search').value;
+        page = 1;
+        load();
+    });
+
+    load();
+})();
+</script>
+@endpush

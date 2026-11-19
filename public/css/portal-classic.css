@@ -1,0 +1,22 @@
+.cms-portal-theme-classic {
+    --portal-accent: #5c4033;
+    --portal-nav-bg: #2c1810;
+}
+
+.cms-portal-theme-classic .portal-nav {
+    background: var(--portal-nav-bg) !important;
+}
+
+.cms-portal-theme-classic .portal-hero {
+    border-radius: 0;
+    border-left: 6px solid var(--portal-accent);
+}
+
+.cms-portal-theme-classic .portal-card {
+    border-radius: 0.15rem;
+    box-shadow: 0 1px 3px rgba(44, 24, 16, 0.12);
+}
+
+.cms-portal-theme-classic .portal-footer {
+    background: #1a100c;
+}

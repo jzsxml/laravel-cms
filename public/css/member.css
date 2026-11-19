@@ -1,0 +1,54 @@
+:root {
+    --member-primary: #00a65a;
+    --member-primary-dark: #008d4c;
+    --member-bg: #f4f6f8;
+}
+
+body.cms-portal {
+    background: var(--member-bg);
+    min-height: 100vh;
+}
+
+.cms-portal-card {
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cms-portal-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+body.cms-member {
+    font-family: "Segoe UI", "PingFang SC", "Microsoft YaHei", system-ui, sans-serif;
+    background: var(--member-bg);
+    min-height: 100vh;
+}
+
+.cms-member-nav {
+    background: linear-gradient(90deg, var(--member-primary-dark), var(--member-primary));
+}
+
+.cms-member-card {
+    border: none;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px rgba(16, 24, 40, 0.08);
+}
+
+body.cms-member-login {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(135deg, #e8f5e9 0%, #f4f6f8 50%, #e3f2fd 100%);
+}
+
+.cms-member-login-card {
+    width: 100%;
+    max-width: 400px;
+    border: none;
+    border-radius: 0.75rem;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+}

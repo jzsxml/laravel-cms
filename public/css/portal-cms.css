@@ -1,0 +1,225 @@
+/* FastAdmin CMS 风格门户主题（参考 cms.apixml.top 布局） */
+body.cms-portal-theme-cms {
+    background: #f4f4f4;
+    color: #333;
+}
+
+.cms-portal-theme-cms .cms-topbar {
+    background: #fff;
+    border-bottom: 1px solid #e8e8e8;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.cms-portal-theme-cms .cms-topbar .navbar-brand img {
+    max-height: 50px;
+    width: auto;
+}
+
+.cms-portal-theme-cms .cms-topbar .nav-link {
+    color: #333;
+    font-size: 0.95rem;
+    padding: 1rem 0.85rem;
+}
+
+.cms-portal-theme-cms .cms-topbar .nav-link:hover,
+.cms-portal-theme-cms .cms-topbar .nav-link.active {
+    color: #0d6efd;
+}
+
+.cms-portal-theme-cms .dropdown-menu {
+    font-size: 0.9rem;
+    border-radius: 0;
+}
+
+.cms-portal-theme-cms .cms-focus-carousel .carousel-caption {
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 1rem 1.25rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.65));
+    text-align: left;
+}
+
+.cms-portal-theme-cms .cms-focus-carousel .carousel-item img {
+    height: 360px;
+    object-fit: cover;
+}
+
+.cms-portal-theme-cms .cms-section-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    border-left: 4px solid #0d6efd;
+    padding-left: 0.65rem;
+    margin-bottom: 1rem;
+}
+
+.cms-portal-theme-cms .cms-hot-gallery .card-img-top {
+    height: 160px;
+    object-fit: cover;
+}
+
+.cms-portal-theme-cms .cms-article-item {
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+.cms-portal-theme-cms .cms-article-item:last-child {
+    border-bottom: none;
+}
+
+.cms-portal-theme-cms .cms-article-thumb {
+    flex: 0 0 180px;
+    display: block;
+    overflow: hidden;
+    border-radius: 4px;
+    background: #eee;
+}
+
+.cms-portal-theme-cms .cms-article-thumb img {
+    width: 100%;
+    height: 120px;
+    object-fit: cover;
+    transition: transform 0.25s ease;
+}
+
+.cms-portal-theme-cms .cms-article-thumb:hover img {
+    transform: scale(1.05);
+}
+
+.cms-portal-theme-cms .cms-article-item h3 {
+    font-size: 1.05rem;
+    margin: 0 0 0.35rem;
+    line-height: 1.4;
+}
+
+.cms-portal-theme-cms .cms-article-item h3 a {
+    color: #222;
+    text-decoration: none;
+}
+
+.cms-portal-theme-cms .cms-article-item h3 a:hover {
+    color: #0d6efd;
+}
+
+.cms-portal-theme-cms .cms-article-excerpt {
+    font-size: 0.875rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.cms-portal-theme-cms .cms-article-meta {
+    font-size: 0.8rem;
+    color: #999;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    align-items: center;
+}
+
+.cms-portal-theme-cms .cms-article-meta .cat {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.cms-portal-theme-cms .cms-sidebar-panel {
+    background: #fff;
+    border: 1px solid #e8e8e8;
+    margin-bottom: 1.25rem;
+}
+
+.cms-portal-theme-cms .cms-sidebar-panel .panel-head {
+    padding: 0.65rem 1rem;
+    font-weight: 600;
+    border-bottom: 1px solid #f0f0f0;
+    background: #fafafa;
+    font-size: 0.95rem;
+}
+
+.cms-portal-theme-cms .cms-sidebar-panel .panel-body {
+    padding: 0.75rem 1rem;
+    font-size: 0.875rem;
+}
+
+.cms-portal-theme-cms .cms-sidebar-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.cms-portal-theme-cms .cms-sidebar-list li {
+    padding: 0.35rem 0;
+    border-bottom: 1px dotted #eee;
+}
+
+.cms-portal-theme-cms .cms-sidebar-list li:last-child {
+    border-bottom: none;
+}
+
+.cms-portal-theme-cms .cms-sidebar-list a {
+    color: #444;
+    text-decoration: none;
+}
+
+.cms-portal-theme-cms .cms-sidebar-list a:hover {
+    color: #0d6efd;
+}
+
+.cms-portal-theme-cms .cms-tag-cloud a {
+    display: inline-block;
+    margin: 0.15rem 0.25rem 0.15rem 0;
+    padding: 0.15rem 0.5rem;
+    background: #f5f5f5;
+    border: 1px solid #e8e8e8;
+    color: #555;
+    text-decoration: none;
+    font-size: 0.8rem;
+}
+
+.cms-portal-theme-cms .cms-tag-cloud a:hover {
+    background: #0d6efd;
+    color: #fff;
+    border-color: #0d6efd;
+}
+
+.cms-portal-theme-cms .cms-footer {
+    background: #2d3237;
+    color: #aab2bd;
+    padding: 2rem 0 1rem;
+}
+
+.cms-portal-theme-cms .cms-footer a {
+    color: #d0d5db;
+    text-decoration: none;
+}
+
+.cms-portal-theme-cms .cms-footer a:hover {
+    color: #fff;
+}
+
+.cms-portal-theme-cms .cms-back-top {
+    position: fixed;
+    right: 1.25rem;
+    bottom: 4rem;
+    z-index: 100;
+}
+
+@media (max-width: 767.98px) {
+    .cms-portal-theme-cms .cms-article-item {
+        flex-direction: column;
+    }
+
+    .cms-portal-theme-cms .cms-article-thumb {
+        flex: none;
+        width: 100%;
+    }
+
+    .cms-portal-theme-cms .cms-focus-carousel .carousel-item img {
+        height: 220px;
+    }
+}
