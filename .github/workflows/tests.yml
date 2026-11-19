@@ -42,5 +42,10 @@ jobs:
           composer config --global repos.packagist composer https://repo.packagist.org
           composer install --prefer-dist --no-interaction --no-progress
 
+      - name: Prepare environment file
+        run: |
+          cp .env.example .env
+          php artisan key:generate --force --no-ansi
+
       - name: Run tests
         run: composer test
