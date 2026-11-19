@@ -4,7 +4,10 @@ namespace App\Models\Concerns;
 
 trait HasUnixTimestamps
 {
-    public $timestamps = false;
+    public function initializeHasUnixTimestamps(): void
+    {
+        $this->timestamps = false;
+    }
 
     protected static function bootHasUnixTimestamps(): void
     {
